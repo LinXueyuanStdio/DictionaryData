@@ -2,11 +2,18 @@
 
 高质量英语字典，包括各种单词书，小学、中学、高中、考研、考博、出国（GRE、托福等等）等等，都已经分类好了
 
-只提供单词书-单词，不提供单词意思、发音音频等花里胡哨的东东
+```python
+import pandas as pd
+book = pd.read_csv('book.csv', sep=">")
+word = pd.read_csv('word.csv', sep=">")
+relation_book_word = pd.read_csv('relation_book_word.csv', sep=">")
+word_translation = pd.read_csv('word_translation.csv')
+```
 
 ## 文件说明
 
 - word.csv 单词
+- word_translation.csv 单词及其中文翻译
 - book.csv 单词书、词汇书
 - relation_book_word.csv 单词和词汇书的关系数据
 
@@ -21,6 +28,14 @@
 |    vc_frequency     | float  | 词频       | `0.000000`                 |
 |    vc_difficulty    |  int   | 难度       | `1`                        |
 | vc_acknowledge_rate | float  | 认识率     | `0.664122`                 |
+
+## word_translation.csv 单词及其中文翻译
+
+|       字段名        |  类型  | 说明       | 示例            |
+| :-----------------: | :----: | :--------- | :------------ |
+|       word        | string | 单词          | `brain`      |
+|  translation      | string | 单词的中文翻译  | `n.脑,头脑`   |
+
 
 ## book.csv 单词书
 
